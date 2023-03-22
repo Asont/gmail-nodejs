@@ -9,7 +9,7 @@ index.use(bodyParser.urlencoded({extended: false}))
 index.use(bodyParser.json())
 
 
-const allowedOrigins = ['https://asont.github.io/portfolio/'];
+const allowedOrigins = ['https://github.io'];
 index.use(cors({
     origin: function(origin, callback){
         // allow requests with no origin
