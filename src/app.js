@@ -24,7 +24,7 @@ app.get('/', (req, res)=>{
     res.send("Server ok")
 })
 
-app.post('/', (req, res) => {
+app.post('/send', (req, res) => {
 
   const {name, phone, email, subject, message} = req.body
 
