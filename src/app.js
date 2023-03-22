@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const nodemailer = require("nodemailer");
-const port = 6060
+const port = process.env.PORT || 6060
 const cors = require('cors')
 const bodyParser = require('body-parser')
 let smtpTransport = require('nodemailer-smtp-transport');
