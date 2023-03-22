@@ -9,18 +9,17 @@ index.use(bodyParser.urlencoded({extended: false}))
 index.use(bodyParser.json())
 
 
+index.use(cors({
+    origin: "https://asont.github.io/portfolio/"
+}));
 
-const corsOptions = {
-    origin: "https://github.io",
-    optionsSuccessStatus: 200
-}
 
-index.get('/', cors(corsOptions),(req, res)=>{
+index.get('/',(req, res)=>{
     res.send("Server ok")
 })
 
 
-index.post('/send', cors(corsOptions), async (req, res) => {
+index.post('/send', async (req, res) => {
 
     const {name, phone, email, subject, message} = req.body
 
