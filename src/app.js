@@ -15,8 +15,8 @@ let transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   auth: {
-    user: process.env.API_URL_EMAIL,
-    pass: process.env.API_URL_PASSWORD
+    user: "hoinyjibp@gmail.com",
+    pass: "swcztrvmnwqrlhqk"
   }
 }));
 
@@ -30,7 +30,7 @@ app.post('/send', (req, res) => {
 
   transporter.sendMail({
         from: email,
-        to: process.env.API_URL_EMAIL,
+        to: "hoinyjibp@gmail.com",
         subject: subject,
         html: `<p>${message}</p><p>${phone}</p><p>${name}</p>`
       }
