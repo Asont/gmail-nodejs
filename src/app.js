@@ -20,6 +20,10 @@ let transporter = nodemailer.createTransport(smtpTransport({
   }
 }));
 
+app.get('/', (req, res)=>{
+    res.send("Server ok")
+})
+
 app.post('/', (req, res) => {
 
   const {name, phone, email, subject, message} = req.body
