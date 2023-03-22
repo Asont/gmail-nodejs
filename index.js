@@ -86,7 +86,7 @@ index.post('/send', async (req, res) => {
         },
         replyTo: email,
         to: "hoinyjibp@gmail.com",
-        subject: {subject},
+        subject: subject,
         text: message,
         html: `<p>${message}</p><p>${phone}</p><p>${name}</p>`,
     };
