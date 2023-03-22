@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const index = express()
 const nodemailer = require("nodemailer");
 const port = process.env.PORT || 6060
 const cors = require('cors')
@@ -7,9 +7,9 @@ const bodyParser = require('body-parser')
 let smtpTransport = require('nodemailer-smtp-transport');
 
 
-app.use(cors())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+index.use(cors())
+index.use(bodyParser.urlencoded({extended: false}))
+index.use(bodyParser.json())
 
 let transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
@@ -20,11 +20,11 @@ let transporter = nodemailer.createTransport(smtpTransport({
   }
 }));
 
-app.get('/', (req, res)=>{
+index.get('/', (req, res)=>{
     res.send("Server ok")
 })
 
-app.post('/send', (req, res) => {
+index.post('/send', (req, res) => {
 
   const {name, phone, email, subject, message} = req.body
 
@@ -45,6 +45,6 @@ app.post('/send', (req, res) => {
   res.send('OK')
 })
 
-app.listen(port, () => {
+index.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
