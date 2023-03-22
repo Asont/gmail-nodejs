@@ -10,7 +10,7 @@ index.use(bodyParser.json())
 
 
 index.use(cors({
-    origin: 'https://github.io'
+    origin: 'https://asont.github.io'
 }));
 
 
