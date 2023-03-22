@@ -11,7 +11,7 @@ index.use(bodyParser.json())
 
 
 const corsOptions = {
-    origin: "https://asont.github.io",
+    origin: "https://github.io",
     optionsSuccessStatus: 200
 }
 
