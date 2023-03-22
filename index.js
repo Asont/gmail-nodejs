@@ -60,8 +60,8 @@ index.post('/send', async (req, res) => {
         port: 465,
         host: "smtp.gmail.com",
         auth: {
-            user: "hoinyjibp@gmail.com",
-            pass: "swcztrvmnwqrlhqk",
+            user: process.env.API_URL_EMAIL,
+            pass: process.env.API_URL_PASSWORD,
         },
         secure: true,
     });
@@ -82,10 +82,10 @@ index.post('/send', async (req, res) => {
     const mailData = {
         from: {
             name: `${name}`,
-            address: "myEmail@gmail.com",
+            address: email,
         },
         replyTo: email,
-        to: "hoinyjibp@gmail.com",
+        to: process.env.API_URL_EMAIL,
         subject: subject,
         text: message,
         html: `<p>${message}</p><p>${phone}</p><p>${name}</p>`,
