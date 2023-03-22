@@ -47,3 +47,5 @@ index.post('/send', (req, res) => {
 index.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+module.exports = index;
