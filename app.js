@@ -6,6 +6,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 let smtpTransport = require('nodemailer-smtp-transport');
 
+
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -14,8 +15,8 @@ let transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   auth: {
-    user: 'hoinyjibp@gmail.com',
-    pass: 'swcztrvmnwqrlhqk'
+    user: process.env.SERVER_APP_EMAIL,
+    pass: process.env.SERVER_APP_PASSWORD
   }
 }));
 
@@ -29,7 +30,7 @@ app.post('/sendMessage', (req, res) => {
 
   transporter.sendMail({
         from: email,
-        to: 'hoinyjibp@gmail.com',
+        to: process.env.SERVER_APP_EMAIL,
         subject: subject,
         html: `<p>${message}</p><p>${phone}</p><p>${name}</p>`
       }
