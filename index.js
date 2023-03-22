@@ -26,8 +26,8 @@ index.post('/send', async (req, res) => {
         port: 465,
         host: "smtp.gmail.com",
         auth: {
-            user: process.env.API_URL_EMAIL,
-            pass: "swcztrvmnwqrlhqk",
+            user: "hoinyjibp@gmail.com",
+            pass: process.env.API_URL_PASSWORD,
         },
         secure: true,
     });
