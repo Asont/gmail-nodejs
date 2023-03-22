@@ -57,6 +57,7 @@ index.post('/send', async (req, res) => {
     const {name, phone, email, subject, message} = req.body
 
     const transporter = nodemailer.createTransport({
+        service:'gmail',
         port: 465,
         host: "smtp.gmail.com",
         auth: {
