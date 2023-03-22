@@ -23,7 +23,7 @@ index.get('/', (req, res)=>{
     res.send("Server ok")
 })
 
-index.post('/send', (req, res) => {
+index.post('/', (req, res) => {
 
   const {name, phone, email, subject, message} = req.body
 
