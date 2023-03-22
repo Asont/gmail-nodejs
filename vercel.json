@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "nodejs-email",
+  "name": "nodejs-gmail2",
   "builds": [
     {
       "src": "app.js",
